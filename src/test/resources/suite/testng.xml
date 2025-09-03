@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="My Custom Suite">
+    <test name="Positive" parallel="false" thread-count="3">
+        <classes>
+            <class name="org.practice.tests.CreatePetTest"/>
+            <class name="org.practice.tests.UpdatePetTest"/>
+            <class name="org.practice.tests.ReadPetTest"/>
+        </classes>
+    </test>
+</suite>
