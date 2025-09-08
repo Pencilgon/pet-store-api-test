@@ -1,7 +1,9 @@
 package org.practice.tests;
 
+import io.qameta.allure.*;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import jdk.jfr.Description;
 import org.practice.api.CreatePetSteps;
 import org.practice.api.PlaceAnOrderSteps;
 import org.practice.api.ReadOrderSteps;
@@ -14,6 +16,13 @@ public class PlaceAnOrderTest extends BaseTest{
     private final PlaceAnOrderSteps placeAnOrderSteps = new PlaceAnOrderSteps();
     private final ReadOrderSteps readOrderSteps = new ReadOrderSteps();
     @Test
+    @Description("Place an order for the pet")
+    @Epic("Web Application")
+    @Feature("Order Placement")
+    @Story("Placing an order for the pet in pet store")
+    @Severity(SeverityLevel.CRITICAL)
+    @TmsLink("MDA-324")
+    @Issue("AMD-3627")
     public void placeAnOrder(){
         Response createdPetResponse = createPetSteps.createPet(pet);
         createdPetIds.add(createdPetResponse.path("id"));
